@@ -1,100 +1,111 @@
+/* ===== GENERAL ===== */
 body {
-  font-family: Barlow, sans-serif;
-  line-height: 1.6;
+  font-family: "Barlow", sans-serif;
+  line-height: 1.7;
   margin: 0;
   padding: 0;
-  background-color: #FECEA8;
+  background-color: #FAF3F3; /* fondo pastel suave */
   color: #333;
 }
 
+/* ===== ENCABEZADO ===== */
 header {
-  background: #FF847C;
-  color: #fff;
-  padding: 1rem 0;
+  background: #A8DADC; /* verde agua pastel */
+  color: #1D3557;
+  padding: 1.5rem;
   text-align: center;
+  border-bottom: 4px solid #F1FAEE;
 }
 
-nav ul {
-  list-style: none;
+header h1 {
   margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+  font-size: 2rem;
 }
 
-nav ul li a {
-  color: #fff;
+.subtitulo {
+  font-size: 1.1rem;
+  color: #457B9D;
+}
+
+/* ===== ÍNDICE (sidebar estilo wiki) ===== */
+#indice {
+  background: #F1FAEE;
+  border: 1px solid #A8DADC;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem auto;
+  max-width: 280px;
+}
+
+#indice h2 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  color: #1D3557;
+}
+
+#indice ul {
+  list-style: none;
+  padding: 0;
+}
+
+#indice li {
+  margin: 0.5rem 0;
+}
+
+#indice a {
   text-decoration: none;
+  color: #457B9D;
   font-weight: bold;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+#indice a:hover {
+  color: #E63946; /* toque coral */
 }
 
+/* ===== CONTENIDO ===== */
 main {
-  max-width: 900px;
+  max-width: 950px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.hero {
-  background: #e2e2e2;
-  padding: 2rem;
-  text-align: center;
-  border-radius: 8px;
-}
-
 .entrada-blog {
-  background: #fff;
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  margin: 1.2rem 0;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.05);
 }
 
 .entrada-blog h3 {
   margin-top: 0;
+  color: #1D3557;
 }
 
-.entrada-blog .leer-mas {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #333;
-  font-weight: bold;
-}
-
-.entrada-blog .leer-mas:hover {
-  color: #007acc;
-}
-
-footer {
-  background: #333;
+/* ===== BOTONES ===== */
+.btn-toggle {
+  cursor: pointer;
+  background-color: #FFB4A2; /* pastel rosado */
   color: #fff;
+  padding: 6px 12px;
+  border: none;
+  margin-top: 8px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  transition: background 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background-color: #E5989B;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #A8DADC;
+  color: #1D3557;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
+  border-top: 4px solid #F1FAEE;
 }
-
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.skip-link:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 1rem;
-  padding: 0.5rem;
-  background: #333;
-  color: #fff;
-  border-radius: 4px;
-}
-
-
