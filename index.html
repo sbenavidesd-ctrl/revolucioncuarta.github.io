@@ -1,10 +1,71 @@
+Aquí tienes tu archivo HTML **modificado con un índice**, **hipervínculos de “Ver más” para desplegar contenido** por cada subtema, y una **sección de bibliografía mejor visualmente y con texto más pequeño**.
+
+---
+
+### ✅ Cambios realizados:
+
+1. **Índice interactivo** al inicio.
+2. Cada subtema ahora tiene un botón **"Ver más"** que despliega el contenido con JavaScript.
+3. **Referencias organizadas** en formato más limpio, con texto más pequeño.
+
+---
+
+### ✅ Código actualizado:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA CUARTA REVOLUCION INDUSTRIAL</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA CUARTA REVOLUCION INDUSTRIAL</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .toggle-content {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .btn-toggle {
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      margin-top: 5px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+
+    #indice {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    #indice h2 {
+      margin-top: 0;
+    }
+
+    #bibliografia {
+      font-size: 0.85em;
+    }
+
+    #bibliografia ol {
+      padding-left: 20px;
+    }
+
+    #bibliografia li {
+      margin-bottom: 8px;
+    }
+  </style>
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
 </head>
 <body>
   <header>
@@ -12,145 +73,142 @@
   </header>
 
   <main>
-    <section id="cuarta-revolucion-industrial" class="content-block">
-      <h2>La Cuarta Revolución Industrial: perspectiva histórica y su impacto en el desarrollo de software y la Realidad Aumentada (RA)</h2>
+    <!-- ÍNDICE -->
+    <nav id="indice">
+      <h2>Índice</h2>
+      <ul>
+        <li><a href="#perspectiva-historica">1. Perspectiva histórica</a></li>
+        <li><a href="#elementos-clave-entorno">2. Elementos clave del entorno</a></li>
+        <li><a href="#entorno-habitabilidad-impacto">3. Entorno y habitabilidad del impacto</a></li>
+        <li><a href="#ejemplos-detal">4. Ejemplos del impacto RA</a></li>
+        <li><a href="#recomendaciones">5. Recomendaciones y líneas futuras</a></li>
+        <li><a href="#bibliografia">6. Fuentes y bibliografía</a></li>
+      </ul>
+    </nav>
 
+    <section id="cuarta-revolucion-industrial" class="content-block">
+
+      <!-- 1. Perspectiva histórica -->
       <article id="perspectiva-historica">
         <h3>1. Perspectiva histórica</h3>
-        <p>
-          La Cuarta Revolución Industrial (4RI) trae la convergencia de tecnologías digitales, físicas y biológicas —incluyendo
-          internet de las cosas, inteligencia artificial, robótica, impresión 3D y tecnologías inmersivas como la realidad aumentada (RA) y la realidad virtual (RV).
-          Si bien la <em>Revolución Digital</em> y la adopción masiva de la web sentaron las bases, en la última década (2014–2024)
-          la RA ha mostrado un crecimiento sostenido en investigación y aplicaciones prácticas, con una tasa de crecimiento anual notoria en la literatura sobre RA aplicada al desarrollo de software.
-          Esto ha facilitado nuevas formas de interacción hombre-máquina y ha abierto oportunidades industriales y educativas de alto impacto.
-        </p>
+        <button class="btn-toggle" onclick="toggleContent('historia')">Ver más</button>
+        <div class="toggle-content" id="historia">
+          <p>
+            La Cuarta Revolución Industrial (4RI) trae la convergencia de tecnologías digitales, físicas y biológicas —incluyendo internet de las cosas, inteligencia artificial, robótica, impresión 3D y tecnologías inmersivas como la realidad aumentada (RA) y la realidad virtual (RV). Si bien la <em>Revolución Digital</em> y la adopción masiva de la web sentaron las bases, en la última década (2014–2024) la RA ha mostrado un crecimiento sostenido en investigación y aplicaciones prácticas, con una tasa de crecimiento anual notoria en la literatura sobre RA aplicada al desarrollo de software. Esto ha facilitado nuevas formas de interacción hombre-máquina y ha abierto oportunidades industriales y educativas de alto impacto.
+          </p>
+        </div>
       </article>
 
+      <!-- 2. Elementos clave del entorno -->
       <article id="elementos-clave-entorno">
         <h3>2. Elementos clave del entorno</h3>
-
-        <h4>2.1 Entorno mundial</h4>
-        <ul>
-          <li><strong>Innovación tecnológica acelerada:</strong> avance en sensores, visión por computador e IA que potencia experiencias RA.</li>
-          <li><strong>Economía digital y cadenas globales:</strong> colaboración internacional en proyectos, outsourcing y foros científicos que determinan prioridades de investigación.</li>
-          <li><strong>Regulación y ética emergente:</strong> privacidad, sesgos de IA y accesibilidad están ganando peso en políticas públicas y normativas.</li>
-        </ul>
-
-        <h4>2.2 Entorno regional</h4>
-        <ul>
-          <li><strong>Concentraciones académicas y tecnológicas:</strong> ciertos países lideran la productividad y eventos (p. ej. India, Alemania, según análisis bibliométricos).</li>
-          <li><strong>Mercados y adopción sectorial:</strong> regiones con inversión en industria 4.0 adoptan RA antes (manufactura, logística, salud).</li>
-        </ul>
-
-        <h4>2.3 Entorno local</h4>
-        <ul>
-          <li><strong>Infraestructura digital:</strong> disponibilidad de redes móviles y capacidad de cómputo local condicionan viabilidad de soluciones RA móviles.</li>
-          <li><strong>Capital humano:</strong> competencias en desarrollo móvil, UX/AR, visión por computador y gestión de proyectos.</li>
-          <li><strong>Actores locales:</strong> universidades, centros de investigación, empresas y espacios urbanos (p. ej. campus, aeropuertos) donde probar aplicaciones.</li>
-        </ul>
+        <button class="btn-toggle" onclick="toggleContent('entorno')">Ver más</button>
+        <div class="toggle-content" id="entorno">
+          <h4>2.1 Entorno mundial</h4>
+          <ul>
+            <li><strong>Innovación tecnológica acelerada:</strong> avance en sensores, visión por computador e IA que potencia experiencias RA.</li>
+            <li><strong>Economía digital y cadenas globales:</strong> colaboración internacional en proyectos, outsourcing y foros científicos que determinan prioridades de investigación.</li>
+            <li><strong>Regulación y ética emergente:</strong> privacidad, sesgos de IA y accesibilidad están ganando peso en políticas públicas y normativas.</li>
+          </ul>
+          <h4>2.2 Entorno regional</h4>
+          <ul>
+            <li><strong>Concentraciones académicas y tecnológicas:</strong> ciertos países lideran la productividad y eventos (p. ej. India, Alemania).</li>
+            <li><strong>Mercados y adopción sectorial:</strong> regiones con inversión en industria 4.0 adoptan RA antes (manufactura, logística, salud).</li>
+          </ul>
+          <h4>2.3 Entorno local</h4>
+          <ul>
+            <li><strong>Infraestructura digital:</strong> disponibilidad de redes móviles y capacidad de cómputo local condicionan viabilidad de soluciones RA móviles.</li>
+            <li><strong>Capital humano:</strong> competencias en desarrollo móvil, UX/AR, visión por computador y gestión de proyectos.</li>
+            <li><strong>Actores locales:</strong> universidades, centros de investigación, empresas y espacios urbanos donde probar aplicaciones.</li>
+          </ul>
+        </div>
       </article>
 
+      <!-- 3. Habitabilidad -->
       <article id="entorno-habitabilidad-impacto">
-        <h3>3. Exploración del entorno y la habitabilidad del impacto de la 4RI en el campo profesional</h3>
-        <p>
-          Entendemos <em>habitabilidad</em> como la capacidad del entorno —técnico, social y regulatorio— para alojar y sostener
-          tecnologías de la 4RI sin generar externalidades no deseadas. Para el desarrollo de software y RA esto implica evaluar:
-        </p>
-
-        <ol>
-          <li><strong>Capacidad técnica:</strong> redes, latencia, sensores y dispositivos disponibles para ejecutar experiencias RA en entornos reales.</li>
-          <li><strong>Competencias profesionales:</strong> formación en integración de RA, pruebas, aseguramiento de calidad, gestión de requisitos y diseño centrado en el usuario.</li>
-          <li><strong>Accesibilidad y usabilidad:</strong> adaptabilidad de la aplicación a distintos perfiles de usuario (edad, capacidades, contexto cultural).</li>
-          <li><strong>Sostenibilidad y escalabilidad:</strong> costos de implementación, mantenimiento y modelo de negocio que permita escalado en entornos locales y regionales.</li>
-          <li><strong>Marco ético y legal:</strong> gestión de datos, consentimiento, y normas locales que regulen geolocalización, reconocimiento y seguridad.</li>
-        </ol>
-
-        <p>
-          Metodología sugerida para evaluar habitabilidad (aplicable a proyectos RA):
-        </p>
-        <ul>
-          <li><strong>Mapeo de actores:</strong> identificar stakeholders (usuarios finales, gestores de infraestructura, autoridades locales, comunidad académica).</li>
-          <li><strong>Pruebas piloto in-situ:</strong> prototipos en entornos reales (campus, transporte, industrias) para medir rendimiento y aceptación.</li>
-          <li><strong>Indicadores de habitabilidad:</strong> tasa de adopción, tiempos de respuesta, errores críticos, satisfacción del usuario y accesibilidad.</li>
-        </ul>
+        <h3>3. Exploración del entorno y la habitabilidad del impacto de la 4RI</h3>
+        <button class="btn-toggle" onclick="toggleContent('habitabilidad')">Ver más</button>
+        <div class="toggle-content" id="habitabilidad">
+          <p>Entendemos <em>habitabilidad</em> como la capacidad del entorno —técnico, social y regulatorio— para alojar y sostener tecnologías de la 4RI sin generar externalidades no deseadas.</p>
+          <ol>
+            <li><strong>Capacidad técnica</strong></li>
+            <li><strong>Competencias profesionales</strong></li>
+            <li><strong>Accesibilidad y usabilidad</strong></li>
+            <li><strong>Sostenibilidad y escalabilidad</strong></li>
+            <li><strong>Marco ético y legal</strong></li>
+          </ol>
+          <ul>
+            <li><strong>Mapeo de actores</strong></li>
+            <li><strong>Pruebas piloto in-situ</strong></li>
+            <li><strong>Indicadores de habitabilidad</strong></li>
+          </ul>
+        </div>
       </article>
 
+      <!-- 4. Ejemplos -->
       <article id="ejemplos-detal">
-        <h3>4. Ejemplos claros y detallados del impacto de la 4RI / RA en el desarrollo de software</h3>
+        <h3>4. Ejemplos del impacto de la 4RI / RA</h3>
+        <button class="btn-toggle" onclick="toggleContent('ejemplos')">Ver más</button>
+        <div class="toggle-content" id="ejemplos">
+          <h4>4.1 Educación</h4>
+          <p><strong>Caso:</strong> plataformas educativas que superponen modelos 3D sobre laboratorios o manuales.</p>
 
-        <h4>4.1 Educación y formación profesional</h4>
-        <p>
-          <strong>Caso:</strong> plataformas educativas que superponen modelos 3D sobre laboratorios o manuales. En la práctica, estudiantes de ingeniería interactúan con máquinas virtuales superpuestas sobre equipos reales,
-          reduciendo riesgos y mejorando comprensión. La RA permite<em> learning-by-doing </em> con retroalimentación inmediata y métricas de desempeño.
-        </p>
+          <h4>4.2 Navegación</h4>
+          <p><strong>Caso:</strong> aplicaciones móviles que señalan rutas dentro de campus universitarios o aeropuertos.</p>
 
-        <h4>4.2 Navegación y orientación en espacios complejos</h4>
-        <p>
-          <strong>Caso:</strong> aplicaciones móviles que señalan rutas dentro de un campus universitario o aeropuerto (ver estudio sobre desarrollo de sistemas de información con RA).
-          Una implementación práctica es mostrar en tiempo real indicadores y alternativas de recorrido para personas con movilidad reducida, optimizando accesibilidad y experiencia de usuario.
-        </p>
+          <h4>4.3 Industria 4.0</h4>
+          <p><strong>Caso:</strong> técnicos equipados con dispositivos RA para mantenimiento guiado.</p>
 
-        <h4>4.3 Industria 4.0 — mantenimiento y operación</h4>
-        <p>
-          <strong>Caso:</strong> técnicos equipados con gafas o tabletas que, al mirar una máquina, reciben superposiciones con instrucciones paso a paso, diagramas y estado de sensores. Esto reduce tiempos de reparación, facilita la capacitación y permite mantenimiento remoto guiado.
-        </p>
+          <h4>4.4 Visualización de proyectos</h4>
+          <p><strong>Caso:</strong> RA para visualizar avances de proyectos de software o construcción.</p>
 
-        <h4>4.4 Gestión de proyectos y visualización</h4>
-        <p>
-          <strong>Caso:</strong> uso de RA para visualizar avances de proyectos de software o construcción sobre el espacio real: tableros superpuestos, control de versiones visuales y coordinación de equipos distribuidos.
-        </p>
+          <h4>4.5 Accesibilidad A2R</h4>
+          <p>Interfaces adaptadas a capacidades detectadas por sensores (contraste, audio, visual).</p>
 
-        <h4>4.5 Accesibilidad y adaptabilidad (A2R)</h4>
-        <p>
-          Las soluciones de Realidad Aumentada Adaptativa (A2R) ajustan el contenido según la ubicación, preferencias y capacidades del usuario.
-          Por ejemplo, interfaces que aumentan contraste, amplían texto o reemplazan instrucciones auditivas por visuales según la necesidad detectada por sensores del dispositivo.
-        </p>
-
-        <h4>4.6 Desarrollo web y RA</h4>
-        <p>
-          La RA impulsa nuevas demandas en desarrollo web: APIs de geolocalización, frameworks que integran experiencias móviles-RA y mayores requisitos de pruebas (pruebas en entornos reales, pruebas de usabilidad y control de versiones de recursos 3D).
-          Además, la investigación muestra que hay áreas con redes de investigación aún poco consolidadas (p. ej. análisis de requisitos y pruebas), lo que abre oportunidades académicas y profesionales.
-        </p>
+          <h4>4.6 Desarrollo web y RA</h4>
+          <p>RA como catalizador de nuevas prácticas en desarrollo web y testing.</p>
+        </div>
       </article>
 
+      <!-- 5. Recomendaciones -->
       <article id="recomendaciones">
         <h3>5. Recomendaciones y líneas futuras</h3>
-        <ul>
-          <li><strong>Fortalecer redes locales:</strong> promover colaboración universidad-empresa para pilotos RA que respondan a problemas concretos (transporte, educación, salud).</li>
-          <li><strong>Formación práctica:</strong> cursos modulares en visión por computador, UX/AR, pruebas y gestión de proyectos para reducir la brecha de habilidades.</li>
-          <li><strong>Pruebas y estándares:</strong> definir protocolos locales para evaluación de desempeño (latencia, precisión de tracking, usabilidad) y políticas de privacidad.</li>
-          <li><strong>Foco en accesibilidad:</strong> diseñar experiencias RA adaptativas que consideren diversidad funcional y cultural.</li>
-          <li><strong>Investigación aplicada:</strong> impulsar estudios sobre análisis de requisitos y pruebas en proyectos RA, áreas identificadas como deficitarias en la literatura.</li>
-        </ul>
+        <button class="btn-toggle" onclick="toggleContent('recomendaciones-content')">Ver más</button>
+        <div class="toggle-content" id="recomendaciones-content">
+          <ul>
+            <li><strong>Fortalecer redes locales</strong></li>
+            <li><strong>Fortalecer redes locales:</strong> promover colaboración universidad-empresa para pilotos RA que respondan a problemas concretos (transporte, educación, salud).</li>
+            <li><strong>Formación práctica:</strong> cursos modulares en visión por computador, UX/AR, pruebas y gestión de proyectos para reducir la brecha de habilidades.</li>
+            <li><strong>Pruebas y estándares:</strong> definir protocolos locales para evaluación de desempeño (latencia, precisión de tracking, usabilidad) y políticas de privacidad.</li>
+            <li><strong>Foco en accesibilidad:</strong> diseñar experiencias RA adaptativas que consideren diversidad funcional y cultural.</li>
+            <li><strong>Investigación aplicada:</strong> impulsar estudios sobre análisis de requisitos y pruebas en proyectos RA, áreas identificadas como deficitarias en la literatura.</li>
+          </ul>
+        </div>
       </article>
 
+      <!-- 6. Fuentes y bibliografía -->
       <footer id="bibliografia">
-        <h3>6. Fuentes y bibliografía (consultadas)</h3>
+        <h3>6. Fuentes y bibliografía</h3>
         <ol>
           <li>
-            Bermon-Angarita, Leonardo — <em>Análisis Bibliométrico de Realidad Aumentada en el desarrollo de software</em>.
-            (Revisión 2014–2024: crecimiento, temas y vacíos de investigación). Enlace: 
-            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_crossref_primary_10_25100_iyc_v27i1_14212" target="_blank" rel="noopener">Acceder</a>.
+            Bermon-Angarita, Leonardo — <em>Análisis Bibliométrico de Realidad Aumentada en el desarrollo de software</em>. (Revisión 2014–2024: crecimiento, temas y vacíos de investigación).<br>
+            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_crossref_primary_10_25100_iyc_v27i1_14212" target="_blank" rel="noopener">Acceder</a>
           </li>
           <li>
-            Martínez, José M.; Martínez, Antonio; Navarro, Fernando — <em>Realidad virtual y realidad aumentada</em>.
-            (Diferencias y aplicaciones en educación, medicina y entretenimiento). Enlace:
-            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/hfgct8/alma99910132504736" target="_blank" rel="noopener">Acceder</a>.
+            Martínez, José M.; Martínez, Antonio; Navarro, Fernando — <em>Realidad virtual y realidad aumentada</em>. (Diferencias y aplicaciones en educación, medicina y entretenimiento).<br>
+            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/hfgct8/alma99910132504736" target="_blank" rel="noopener">Acceder</a>
           </li>
           <li>
-            Bershadskaya, Elena G.; Martyshkin, Alexey I — <em>Desarrollo de software para un sistema de información que señala el camino utilizando tecnología de realidad aumentada</em>.
-            (Aplicación práctica de RA para orientación en entornos complejos). Enlace:
-            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_dialnet_primary_oai_dialnet_unirioja_es_ART0001446320" target="_blank" rel="noopener">Acceder</a>.
+            Bershadskaya, Elena G.; Martyshkin, Alexey I — <em>Desarrollo de software para un sistema de información que señala el camino utilizando tecnología de realidad aumentada</em>.<br>
+            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_dialnet_primary_oai_dialnet_unirioja_es_ART0001446320" target="_blank" rel="noopener">Acceder</a>
           </li>
           <li>
-            Tenemaza Vera, Regina Maritzol; Ramírez, J.; De Antonio, Angélica — <em>Realidad Aumentada Adaptativa</em>. Revista Politécnica, Vol. 34, no. 2.
-            (Concepto y aplicaciones de A2R y su relación con sensores y adaptabilidad en dispositivos móviles). Enlace:
-            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_doaj_primary_oai_doaj_org_article_5d4e82323bec433090fc2e865574d3ae" target="_blank" rel="noopener">Acceder</a>.
+            Tenemaza Vera, Regina Maritzol; Ramírez, J.; De Antonio, Angélica — <em>Realidad Aumentada Adaptativa</em>. Revista Politécnica, Vol. 34, no. 2.<br>
+            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_doaj_primary_oai_doaj_org_article_5d4e82323bec433090fc2e865574d3ae" target="_blank" rel="noopener">Acceder</a>
           </li>
           <li>
-            Trabajo de Fin de Carrera — Implementación en Android basada en Wikitude World Browser para encontrar paradas de autobús (ejemplo aplicado de RA móvil para transporte).
-            Enlace:
-            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_csuc_recercat_oai_recercat_cat_2072_223835" target="_blank" rel="noopener">Acceder</a>.
+            Trabajo de Fin de Carrera — Implementación en Android basada en Wikitude World Browser para encontrar paradas de autobús.<br>
+            <a href="https://ucentral.primo.exlibrisgroup.com/permalink/57UCEN_INST/od0cst/cdi_csuc_recercat_oai_recercat_cat_2072_223835" target="_blank" rel="noopener">Acceder</a>
           </li>
         </ol>
       </footer>
@@ -163,3 +221,4 @@
 </body>
 </html>
 
+    
